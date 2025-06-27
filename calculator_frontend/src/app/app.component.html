@@ -1,0 +1,58 @@
+<!-- Calculator App: Modern, Minimalistic, Responsive -->
+<div class="calc-container">
+  <div class="calc-body">
+    <div class="calc-display">
+      <span>{{ display }}</span>
+    </div>
+    <div class="calc-keypad">
+      <div class="keypad-row">
+        <button type="button" class="calc-btn func-btn" (click)="clear()">C</button>
+        <span class="spacer"></span>
+        <button
+          type="button"
+          class="calc-btn op-btn"
+          [class.active]="isActiveOperator('/')"
+          (click)="inputOperator('/')"
+        >/</button>
+      </div>
+      <div class="keypad-row">
+        <button type="button" class="calc-btn" (click)="inputDigit('7')">7</button>
+        <button type="button" class="calc-btn" (click)="inputDigit('8')">8</button>
+        <button type="button" class="calc-btn" (click)="inputDigit('9')">9</button>
+        <button
+          type="button"
+          class="calc-btn op-btn"
+          [class.active]="isActiveOperator('*')"
+          (click)="inputOperator('*')"
+        >&times;</button>
+      </div>
+      <div class="keypad-row">
+        <button type="button" class="calc-btn" (click)="inputDigit('4')">4</button>
+        <button type="button" class="calc-btn" (click)="inputDigit('5')">5</button>
+        <button type="button" class="calc-btn" (click)="inputDigit('6')">6</button>
+        <button
+          type="button"
+          class="calc-btn op-btn"
+          [class.active]="isActiveOperator('-')"
+          (click)="inputOperator('-')"
+        >-</button>
+      </div>
+      <div class="keypad-row">
+        <button type="button" class="calc-btn" (click)="inputDigit('1')">1</button>
+        <button type="button" class="calc-btn" (click)="inputDigit('2')">2</button>
+        <button type="button" class="calc-btn" (click)="inputDigit('3')">3</button>
+        <button
+          type="button"
+          class="calc-btn op-btn"
+          [class.active]="isActiveOperator('+')"
+          (click)="inputOperator('+')"
+        >+</button>
+      </div>
+      <div class="keypad-row">
+        <button type="button" class="calc-btn zero-btn" (click)="inputDigit('0')">0</button>
+        <button type="button" class="calc-btn" (click)="inputDigit('.')">.</button>
+        <button type="button" class="calc-btn eq-btn" (click)="calculateResult()">=</button>
+      </div>
+    </div>
+  </div>
+</div>
